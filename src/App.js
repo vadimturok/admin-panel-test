@@ -3,7 +3,7 @@ import Login from "./pages/login/Login";
 import {
     BrowserRouter,
     Routes,
-    Route,
+    Route, HashRouter,
 } from "react-router-dom";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
@@ -17,7 +17,7 @@ function App() {
     const {darkMode} = useContext(DarkModeContext)
   return (
       <div className={darkMode ? 'app dark' : 'app'}>
-          <BrowserRouter basename={'/admin-panel-test'}>
+          <HashRouter>
               <Routes>
                   <Route path={'/'}>
                       <Route index element={<Home/>}/>
@@ -34,7 +34,7 @@ function App() {
                       </Route>
                   </Route>
               </Routes>
-          </BrowserRouter>
+          </HashRouter>
       </div>
   );
 }
